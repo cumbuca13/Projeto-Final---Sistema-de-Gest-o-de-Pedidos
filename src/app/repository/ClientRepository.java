@@ -1,8 +1,7 @@
 package app.repository;
 
-import app.model.Client;
 import app.exception.EntityNotFoundException;
-
+import app.model.Client;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -16,7 +15,7 @@ public class ClientRepository {
 
     public Client findById(int id) {
         Client c = clients.get(id);
-        if (c == null) throw new EntityNotFoundException("Cliente não encontrado: " + id);
+        if (c == null) throw new EntityNotFoundException("Cliente nao encontrado: " + id);
         return c;
     }
 

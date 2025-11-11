@@ -8,7 +8,7 @@ public class OrderItem {
 
     public OrderItem(Product product, int quantity) {
         if (product == null) {
-            throw new InvalidDataException("Produto do item não pode ser nulo.");
+            throw new InvalidDataException("Produto do item nao pode ser nulo.");
         }
         if (quantity <= 0) {
             throw new InvalidDataException("Quantidade deve ser positiva.");

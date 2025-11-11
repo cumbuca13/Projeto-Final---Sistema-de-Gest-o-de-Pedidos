@@ -9,10 +9,10 @@ public class Client {
 
     public Client(int id, String name, String email) {
         if (name == null || name.trim().isEmpty()) {
-            throw new InvalidDataException("Nome do cliente não pode ser vazio.");
+            throw new InvalidDataException("Nome do cliente nao pode ser vazio.");
         }
         if (email == null || email.trim().isEmpty()) {
-            throw new InvalidDataException("E-mail do cliente não pode ser vazio.");
+            throw new InvalidDataException("E-mail do cliente nao pode ser vazio.");
         }
         this.id = id;
         this.name = name.trim();

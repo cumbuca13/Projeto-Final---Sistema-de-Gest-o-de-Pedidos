@@ -3,11 +3,9 @@ package app.service;
 import app.exception.InvalidDataException;
 import app.model.*;
 import app.model.enums.Category;
-import app.model.enums.OrderStatus;
 import app.repository.ClientRepository;
 import app.repository.OrderRepository;
 import app.repository.ProductRepository;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -48,7 +46,7 @@ public class MenuService {
                         running = false;
                         System.out.println("Saindo...");
                     }
-                    default -> System.out.println("Opção inválida.");
+                    default -> System.out.println("Opcao invalida.");
                 }
             } catch (InvalidDataException ex) {
                 System.out.println("Erro: " + ex.getMessage());
@@ -61,7 +59,7 @@ public class MenuService {
     }
 
     private void showMenu() {
-        System.out.println("\n=== Sistema de Gestão de Pedidos ===");
+        System.out.println("\n=== Sistema de Gestao de Pedidos ===");
         System.out.println("1. Cadastrar Cliente");
         System.out.println("2. Cadastrar Produto");
         System.out.println("3. Criar Pedido");
@@ -85,13 +83,13 @@ public class MenuService {
     private void createProduct() {
         System.out.print("Nome do produto: ");
         String name = scanner.nextLine();
-        System.out.print("Preço: ");
+        System.out.print("Preco: ");
         double price = Double.parseDouble(scanner.nextLine());
         System.out.println("Categorias: ");
         for (Category cat : Category.values()) {
             System.out.println(cat.ordinal() + " - " + cat);
         }
-        System.out.print("Escolha categoria (número): ");
+        System.out.print("Escolha categoria (numero): ");
         int idx = Integer.parseInt(scanner.nextLine());
         Category category = Category.values()[idx];
         Product p = new Product(nextProductId++, name, price, category);

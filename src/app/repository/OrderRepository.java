@@ -1,9 +1,9 @@
 package app.repository;
 
-import app.model.Order;
 import app.exception.EntityNotFoundException;
-
+import app.model.Order;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -16,11 +16,15 @@ public class OrderRepository {
 
     public Order findById(int id) {
         Order o = orders.get(id);
-        if (o == null) throw new EntityNotFoundException("Pedido não encontrado: " + id);
+        if (o == null) throw new EntityNotFoundException("Pedido nao encontrado: " + id);
         return o;
     }
 
     public Collection<Order> findAll() {
         return orders.values();
+    }
+
+    public List<Order> getAll() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

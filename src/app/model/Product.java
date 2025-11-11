@@ -11,13 +11,13 @@ public class Product {
 
     public Product(int id, String name, double price, Category category) {
         if (name == null || name.trim().isEmpty()) {
-            throw new InvalidDataException("Nome do produto não pode ser vazio.");
+            throw new InvalidDataException("Nome do produto nao pode ser vazio.");
         }
         if (price <= 0.0) {
-            throw new InvalidDataException("Preço do produto deve ser positivo.");
+            throw new InvalidDataException("Preco do produto deve ser positivo.");
         }
         if (category == null) {
-            throw new InvalidDataException("Categoria não pode ser nula.");
+            throw new InvalidDataException("Categoria nao pode ser nula.");
         }
         this.id = id;
         this.name = name.trim();

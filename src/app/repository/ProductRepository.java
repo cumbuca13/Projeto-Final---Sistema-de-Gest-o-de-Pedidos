@@ -15,7 +15,7 @@ public class ProductRepository {
 
     public Product findById(int id) {
         Product p = products.get(id);
-        if (p == null) throw new EntityNotFoundException("Produto não encontrado: " + id);
+        if (p == null) throw new EntityNotFoundException("Produto nao encontrado: " + id);
         return p;
     }
 

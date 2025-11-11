@@ -1,10 +1,11 @@
 package app.model;
 
-import app.model.enums.OrderStatus;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import app.model.enums.OrderStatus;
 
 public class Order {
     private final int id;
@@ -40,7 +41,15 @@ public class Order {
 
     @Override
     public String toString() {
-        return String.format("Order{id=%d, client=%s, status=%s, total=%.2f, items=%d}",
-            id, client.getName(), status, getTotal(), items.size());
+        return String.format(
+            "Order{id=%d, client=%s, status=%s, total=%.2f, items=%d, createdAt=%s}",
+            id,
+            client.getName(),
+            status,
+            getTotal(),
+            items.size(),
+            createdAt
+        );
     }
+
 }
